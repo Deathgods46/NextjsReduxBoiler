@@ -6,9 +6,9 @@ export const postsApi = createApi({
   reducerPath: 'postsApi',
   baseQuery: fetchBaseQuery({ baseUrl: process.env.NEXT_PUBLIC_API_URL }), // Update the base URL
   endpoints: (builder) => ({
-    getPosts: builder.query({
+    getPosts: builder.query<Response, void>({
       query: () => 'posts',
-    }),
+    })
   }),
 });
 
